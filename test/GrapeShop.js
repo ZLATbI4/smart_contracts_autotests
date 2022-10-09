@@ -1,5 +1,5 @@
 const { expect } = require("chai")
-const { ethers, network} = require("hardhat")
+const { ethers } = require("hardhat")
 
 describe("GrapeShop", function(){
     let owner
