@@ -1,4 +1,8 @@
 # Auto-tests for various smart-contracts
+![build status](https://github.com/ZLATbI4/smart_contracts_autotests/actions/workflows/docker-build.yml/badge.svg)
+
+
+
 
 ### How to run tests?
 
