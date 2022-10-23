@@ -4,6 +4,10 @@
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
     "hardhat": "^2.11.2"
   },
+  "scripts": {
+    "pretest": "npm install && npx hardhat clean && npx hardhat compile",
+    "test": "npx hardhat coverage"
+  },
   "dependencies": {
     "solidity-coverage": "^0.8.2"
   }
