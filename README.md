@@ -6,7 +6,7 @@
 **By shell:**
 
 ```shell
-bash run_tests.sh
+npm test
 ```
 
 **Or via docker:**
