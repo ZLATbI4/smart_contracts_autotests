@@ -1,0 +1,19 @@
+name: Nightly tests run
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        env:
+          TAG_NAME: nightly-tests-run-${{ steps.date.outputs.date }}
+      - name: Build the Docker image for $TAG_NAME
+        run: docker build . --file Dockerfile --tag $TAG_NAME
+      - name: Run $TAG_NAME autotests
+        run: docker run $TAG_NAME
