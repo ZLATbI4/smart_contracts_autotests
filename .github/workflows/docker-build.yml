@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Get current date
-      run: echo TAG_NAME=soltests-$(date +'+%Y-%m-%d_%H%M%S') >> $GITHUB_ENV
+      run: echo TAG_NAME=soltests-build-$(date '+%Y-%m-%d_%H%M%S') >> $GITHUB_ENV
     - name: Build the Docker image ${{ env.TAG_NAME }}
       run: docker build . --file Dockerfile --tag ${{ env.TAG_NAME }}
     - name: Run autotests
