@@ -10,9 +10,7 @@ jobs:
     steps:
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-        env:
-          TAG_NAME: nightly-tests-run-${{ steps.date.outputs.date }}
+        run: export TAG_NAME=nightly-tests-run-$(date '+%Y-%m-%d')
       - name: Build the Docker image for $TAG_NAME
         run: docker build . --file Dockerfile --tag $TAG_NAME
       - name: Run $TAG_NAME autotests
