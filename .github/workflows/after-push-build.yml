@@ -1,4 +1,4 @@
-name: After commit/merge tests run
+name: After push/merge tests run
 
 on:
   push:
