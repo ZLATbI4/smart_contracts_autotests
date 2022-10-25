@@ -1,4 +1,4 @@
-name: Run tests in Docker
+name: After commit/merge tests run
 
 on:
   push:
